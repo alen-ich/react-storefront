@@ -1,4 +1,4 @@
 [build.environment]
 NPM_FLAGS="--version"
 [build]
-command = "npx pnpm install --store-dir=.pnpm && npx pnpm build"
+command = "npx pnpm install --store-dir=.pnpm --frozen-lockfile && npx pnpm build"
