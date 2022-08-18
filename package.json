@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skipping pnpm install",
     "build": "env-cmd -f .env env-cmd -f .env.local --fallback turbo run build --cache-dir=.turbo",
     "generate": "env-cmd -f .env env-cmd -f .env.local --fallback turbo run generate --cache-dir=.turbo",
     "dev": "env-cmd -f .env env-cmd -f .env.local --fallback turbo run dev --parallel --cache-dir=.turbo",
@@ -14,8 +15,7 @@
     "lint:staged": "env-cmd -f .env env-cmd -f .env.local --fallback turbo run lint:staged",
     "check-types": "turbo run check-types --cache-dir=.turbo",
     "test": "env-cmd -f .env turbo run test --cache-dir=.turbo",
-    "format": "prettier --write .",
-    "prepare": "husky install"
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
