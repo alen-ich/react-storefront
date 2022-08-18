@@ -28,5 +28,9 @@
     "node": "^16.0.0",
     "pnpm": "^7.5.0"
   },
-  "packageManager": "pnpm@7.5.2"
+  "packageManager": "pnpm@7.5.2",
+  "dependencies": {
+    "@next/bundle-analyzer": "^12.2.5",
+    "next-transpile-modules": "9.0.0"
+  }
 }
