@@ -2,8 +2,3 @@
 NPM_FLAGS="--version"
 [build]
 command = "npx pnpm install --store-dir=.pnpm --frozen-lockfile && npx pnpm build"
-[[plugins]]
-package = "/netlify-plugin-cache"
-
-  [plugins.inputs]
-  paths = [".pnpm"]
