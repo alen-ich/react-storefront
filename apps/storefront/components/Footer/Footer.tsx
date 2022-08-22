@@ -8,8 +8,8 @@ import { usePaths } from "@/lib/paths";
 import { useFooterMenuQuery } from "@/saleor/api";
 
 import { Box } from "../Box";
-import { ChannelDropdown } from "../regionDropdowns/ChannelDropdown";
-import { LocaleDropdown } from "../regionDropdowns/LocaleDropdown";
+// import { ChannelDropdown } from "../regionDropdowns/ChannelDropdown";
+// import { LocaleDropdown } from "../regionDropdowns/LocaleDropdown";
 import { useRegions } from "../RegionsProvider";
 import styles from "./Footer.module.css";
 
@@ -95,12 +95,12 @@ export function Footer({ className, ...rest }: FooterProps) {
         </div>
         <div className="flex items-center">
           <p className="text-sm text-main-3 flex-grow">
-            © Copyright 2018 - {new Date().getFullYear()} Saleor Commerce
+            © Copyright {new Date().getFullYear()} Bibotta Studio
           </p>
-          <div className="invisible md:visible flex gap-4">
+          {/* <div className="invisible md:visible flex gap-4">
             <ChannelDropdown horizontalAlignment="right" />
             <LocaleDropdown horizontalAlignment="right" />
-          </div>
+          </div> */}
         </div>
       </Box>
     </footer>

@@ -33,9 +33,9 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <li key={product.id} className="w-full">
       <Link href={paths.products._slug(product.slug).$url()} prefetch={false} passHref>
-        <a href="pass">
+        <a href="pass" className="flex flex-col">
           <div className="bg-main active:bg-brand w-full aspect-1">
-            <div className="bg-white w-full h-full relative hover:translate-y-[-10px] hover:translate-x-[-10px] transition-transform object-contain ">
+            <div className="bg-white w-full h-full relative object-contain ">
               {thumbnailUrl ? (
                 <Image src={thumbnailUrl} width={512} height={512} />
               ) : (
