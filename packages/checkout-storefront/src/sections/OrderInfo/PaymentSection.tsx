@@ -4,20 +4,24 @@ import { useFormattedMessages } from "@/checkout-storefront/hooks/useFormattedMe
 import { usePay } from "@/checkout-storefront/hooks/usePay";
 import { useFetch } from "@/checkout-storefront/hooks/useFetch";
 import { getOrderPaymentStatus } from "@/checkout-storefront/fetch";
-import { Skeleton } from "@/checkout-storefront/components/Skeleton";
 
 import { Section, SectionTitle } from "./Section";
+import { useAppConfig } from "@/checkout-storefront/providers/AppConfigProvider";
+import { Skeleton } from "@/checkout-storefront/components/Skeleton";
 
 export const PaymentSection = ({ orderId }: { orderId: string }) => {
   const { loading: orderPayLoading, orderPay } = usePay();
+  const { env } = useAppConfig();
+
   const [{ data: paymentData, loading: paymentStatusLoading }] = useFetch(getOrderPaymentStatus, {
-    args: { orderId },
+    args: { orderId, checkoutApiUrl: env.checkoutApiUrl },
   });
   const formatMessage = useFormattedMessages();
 
   const handlePay = () => {
     return orderPay({
       provider: "mollie", // TODO: Hardcoded payment provider
+      method: "creditCard", // TODO: Hardcoded payment provider
       orderId,
     });
   };
