@@ -46,7 +46,7 @@ html {
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain;
-  height: 100vh;
+  height: 50vh;
 }
 
 @media (max-width: 414px) {
@@ -60,6 +60,6 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100vh;
+    height: 50vh;
   }
 }

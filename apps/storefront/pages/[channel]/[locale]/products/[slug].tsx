@@ -155,12 +155,12 @@ const ProductPage = ({ product }: InferGetStaticPropsType<typeof getStaticProps>
   return (
     <>
       <ProductPageSeo product={product} />
-      <main className={clsx("grid grid-cols-1 gap-4 max-h-full overflow-auto md:overflow-hidden")}>
+      <main className={clsx("grid grid-cols-1 max-h-full overflow-auto md:overflow-hidden")}>
         <div className="col-span-1">
           {/* <ProductGallery product={product} selectedVariant={selectedVariant} /> */}
           <Slider product={product} />
         </div>
-        <div className="space-y-5 mt-10 md:mt-0 px-2">
+        <div className="space-y-5 mt-4 md:mt-0 px-2">
           <div>
             <h1
               className="text-4xl font-bold tracking-tight text-gray-800"
