@@ -119,6 +119,7 @@ export const CheckoutLineItem = ({ line }: CheckoutLineItemProps) => {
             src={line.variant.product?.thumbnail?.url}
             alt={line.variant.product?.thumbnail?.alt || ""}
             layout="fill"
+            objectFit="cover"
           />
         )}
       </div>
