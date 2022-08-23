@@ -11,23 +11,24 @@ export interface ProductCardProps {
   product: ProductCardFragment;
 }
 
-const getCardSecondaryDescription = (product: ProductCardFragment) => {
-  const artistAttribute = product.attributes.find(
-    (attribute) => attribute.attribute.slug === "artist"
-  );
-  const mainValue = artistAttribute?.values[0];
-  if (mainValue?.name) {
-    return mainValue.name;
-  }
-  if (product.category) {
-    return translate(product.category, "name");
-  }
-  return "";
-};
+// const getCardSecondaryDescription = (product: ProductCardFragment) => {
+//   const artistAttribute = product.attributes.find(
+//     (attribute) => attribute.attribute.slug === "artist"
+//   );
+//   const mainValue = artistAttribute?.values[0];
+//   if (mainValue?.name) {
+//     return mainValue.name;
+//   }
+//   if (product.category) {
+//     return translate(product.category, "name");
+//   }
+//   return "";
+// };
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   const paths = usePaths();
-  const secondaryDescription = getCardSecondaryDescription(product);
+  const productInStock = product.isAvailable;
+  // const secondaryDescription = getCardSecondaryDescription(product);
   const thumbnailUrl = product.media?.find((media) => media.type === "IMAGE")?.url;
 
   return (
@@ -51,8 +52,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           >
             {translate(product, "name")}
           </p>
-          {secondaryDescription && (
+          {/* {secondaryDescription && (
             <p className="block text-md font-normal text-main underline">{secondaryDescription}</p>
+          )} */}
+          {productInStock && (
+            <p className="block text-base font-normal text-main">{productInStock} В наличии</p>
+          )}
+          {!productInStock && (
+            <p className="block text-base font-normal text-main">{productInStock} Нет наличии</p>
           )}
         </a>
       </Link>
