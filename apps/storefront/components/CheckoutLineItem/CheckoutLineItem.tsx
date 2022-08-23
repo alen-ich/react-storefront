@@ -172,7 +172,7 @@ export const CheckoutLineItem = ({ line }: CheckoutLineItemProps) => {
                 </div>
               )}
             </div>
-            <div className="flex justify-items-end space-x-4 ">
+            <div className="flex flex-col sm:flex-row items-center justify-items-end space-x-4 ">
               <div className="flex flex-row items-center mb-3">
                 <IconButton
                   variant="bare"
