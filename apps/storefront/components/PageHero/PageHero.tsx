@@ -15,12 +15,12 @@ export interface PageHeroProps {
 
 export const PageHero = ({ title, description, pills = [] }: PageHeroProps) => (
   <div className="sm:text-left">
-    <h1 className="text-5xl font-bold mb-4" data-testid={`titleOf${title}`}>
+    <h1 className="text-lg font-bold" data-testid={`titleOf${title}`}>
       {title}
     </h1>
 
     {description && (
-      <div className="text-lg inline-block sm:block my-6 text-main-1">
+      <div className="inline-block sm:block text-main-1">
         <RichText jsonStringData={description} />
       </div>
     )}

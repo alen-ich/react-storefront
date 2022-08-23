@@ -14,7 +14,7 @@ export const RichText = ({ jsonStringData }: RichTextProps) => {
   }
 
   return (
-    <article className="prose-2xl">
+    <article className="text-base mt-2">
       <Blocks data={data} />
     </article>
   );

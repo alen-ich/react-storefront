@@ -67,7 +67,7 @@ const CollectionPage = ({
   return (
     <>
       <CollectionPageSeo collection={collection} />
-      <header className="mb-4 pt-4">
+      <header className="pt-4">
         <div className="container px-8">
           <PageHero
             title={translate(collection, "name")}
@@ -75,7 +75,7 @@ const CollectionPage = ({
           />
         </div>
       </header>
-      <div className="container px-8 mt-4">
+      <div className="container px-8">
         <FilteredProductList
           attributeFiltersData={attributeFiltersData}
           collectionIDs={[collection.id]}

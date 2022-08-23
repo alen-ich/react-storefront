@@ -174,7 +174,7 @@ export const FilteredProductList = ({
             />
           </div>
           <div className="flex-none text-main-2 text-base">
-            <div>{itemsCounter} items</div>
+            <div>{itemsCounter} товара</div>
           </div>
         </div>
         {pills.length > 0 && (
