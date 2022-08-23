@@ -31,7 +31,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 const Home = ({ menuData }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
     <BaseSeo />
-    <div className="py-10">
+    <div className="pb-10">
       <header className="mb-4">
         <div className="container" />
       </header>
