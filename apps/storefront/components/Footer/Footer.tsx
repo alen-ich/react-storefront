@@ -20,7 +20,7 @@ export type FooterProps = HTMLAttributes<HTMLElement>;
 // @todo remove this when the issue is fixed.
 const fixMenuItemLocalhostUrl = (url: string) => url.replace(/^https?:\/\/localhost:8000\//, "/");
 
-export function Footer({ className, ...rest }: FooterProps) {
+export const Footer = ({ className, ...rest }: FooterProps) => {
   const paths = usePaths();
   const { query, currentChannel, currentLocale } = useRegions();
 
@@ -95,7 +95,7 @@ export function Footer({ className, ...rest }: FooterProps) {
         </div>
         <div className="flex items-center">
           <p className="text-sm text-main-3 flex-grow">
-            © Copyright 2018 - {new Date().getFullYear()} Saleor Commerce
+            © Copyright {new Date().getFullYear()} Bibotta Studio
           </p>
           {/* <div className="invisible md:visible flex gap-4">
             <ChannelDropdown horizontalAlignment="right" />
@@ -105,6 +105,6 @@ export function Footer({ className, ...rest }: FooterProps) {
       </Box>
     </footer>
   );
-}
+};
 
 export default Footer;
