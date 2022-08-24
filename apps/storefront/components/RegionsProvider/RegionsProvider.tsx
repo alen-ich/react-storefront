@@ -9,8 +9,11 @@ import createSafeContext from "@/lib/useSafeContext";
 import { formatAsMoney } from "@/lib/util";
 import { LanguageCodeEnum, PriceFragment } from "@/saleor/api";
 
-import * as sourceOfTruth from "../../locale/en-US.json";
+import * as en from "../../locale/en-US.json";
+import * as fr from "../../locale/fr-FR.json";
 import * as pl from "../../locale/pl-PL.json";
+import * as sourceOfTruth from "../../locale/ru-KZ.json";
+import * as vi from "../../locale/vi-VN.json";
 
 export interface RegionsConsumerProps {
   channels: Channel[];
@@ -32,9 +35,15 @@ export type LocaleKey = keyof LocaleMessages;
 export function importMessages(locale: string): LocaleMessages {
   switch (locale) {
     case "en-US":
-      return sourceOfTruth;
+      return en;
     case "pl-PL":
       return pl;
+    case "fr-FR":
+      return fr;
+    case "vi-VN":
+      return vi;
+    case "ru-KZ":
+      return sourceOfTruth;
     default:
       return sourceOfTruth;
   }
@@ -44,7 +53,7 @@ export interface RegionsProviderProps {
   children: React.ReactNode;
 }
 
-export function RegionsProvider({ children }: PropsWithChildren<{}>) {
+export const RegionsProvider = ({ children }: PropsWithChildren<{}>) => {
   const router = useRouter();
   const { resetCheckoutToken } = useCheckout();
 
@@ -86,7 +95,7 @@ export function RegionsProvider({ children }: PropsWithChildren<{}>) {
       </IntlProvider>
     </Provider>
   );
-}
+};
 
 export const useRegions = useContext;
 

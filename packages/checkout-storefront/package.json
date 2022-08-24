@@ -25,12 +25,14 @@
     "@apollo/client": "^3.6.9",
     "@headlessui/react": "^1.6.6",
     "@hookform/error-message": "^2.0.0",
-    "@react-aria/i18n": "^3.5.1",
-    "@react-types/button": "^3.6.0",
-    "@saleor/sdk": "^0.4.4",
-    "@saleor/ui-kit": "workspace:0.0.0",
-    "checkout-common": "workspace:0.1.0",
-    "clsx": "^1.2.1",
+    "@react-aria/i18n": "^3.3.4",
+    "@react-types/button": "^3.4.1",
+    "@saleor/sdk": "^0.4.3",
+    "@saleor/ui-kit": "workspace:*",
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.26.0",
+    "checkout-common": "workspace:*",
+    "clsx": "^1.1.1",
     "concurrently": "7.3.0",
     "graphql": "^15.8.0",
     "hex-rgb": "^5.0.0",
@@ -89,7 +91,13 @@
     "rollup-plugin-terser": "^7.0.2",
     "tsconfig": "workspace:0.0.0",
     "tslib": "^2.4.0",
-    "typescript": "^4.7.4",
+    "typescript": "4.7.4",
     "web-vitals": "^2.1.4"
-  }
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0",
+    "pnpm": "^7.5.0"
+  },
+  "packageManager": "pnpm@7.5.2"
 }

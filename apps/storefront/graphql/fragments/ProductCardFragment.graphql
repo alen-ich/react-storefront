@@ -30,4 +30,5 @@ fragment ProductCardFragment on Product {
       name
     }
   }
+  isAvailable
 }

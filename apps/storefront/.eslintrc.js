@@ -3,8 +3,6 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   extends: [
     "storefront",
-    "next",
-    "next/core-web-vitals",
     "airbnb",
     "plugin:@typescript-eslint/recommended",
     "prettier", // prettier *has* to be the last one, to avoid conflicting rules
@@ -49,6 +47,13 @@ module.exports = {
     "no-restricted-imports": "off",
     "no-restricted-exports": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
+      },
+    ],
     // TO FIX:
     "import/no-cycle": "off", // pathpidia issue
     "import/prefer-default-export": "off",

@@ -11,30 +11,31 @@ export interface ProductCardProps {
   product: ProductCardFragment;
 }
 
-const getCardSecondaryDescription = (product: ProductCardFragment) => {
-  const artistAttribute = product.attributes.find(
-    (attribute) => attribute.attribute.slug === "artist"
-  );
-  const mainValue = artistAttribute?.values[0];
-  if (mainValue?.name) {
-    return mainValue.name;
-  }
-  if (product.category) {
-    return translate(product.category, "name");
-  }
-  return "";
-};
+// const getCardSecondaryDescription = (product: ProductCardFragment) => {
+//   const artistAttribute = product.attributes.find(
+//     (attribute) => attribute.attribute.slug === "artist"
+//   );
+//   const mainValue = artistAttribute?.values[0];
+//   if (mainValue?.name) {
+//     return mainValue.name;
+//   }
+//   if (product.category) {
+//     return translate(product.category, "name");
+//   }
+//   return "";
+// };
 
-export function ProductCard({ product }: ProductCardProps) {
+export const ProductCard = ({ product }: ProductCardProps) => {
   const paths = usePaths();
-  const secondaryDescription = getCardSecondaryDescription(product);
+  const productInStock = product.isAvailable;
+  // const secondaryDescription = getCardSecondaryDescription(product);
   const thumbnailUrl = product.media?.find((media) => media.type === "IMAGE")?.url;
 
   return (
     <li key={product.id} className="w-full first:col-span-2">
       <Link href={paths.products._slug(product.slug).$url()} prefetch={false} passHref>
         <a href="pass" className="flex flex-col w-full">
-          <div className="bg-main active:bg-brand w-ful">
+          <div className="bg-main active:bg-brand w-full">
             <div className="bg-white w-full h-full relative transition-transform object-contain ">
               {thumbnailUrl ? (
                 <Image src={thumbnailUrl} layout="responsive" width="67%" height="100%" />
@@ -51,11 +52,17 @@ export function ProductCard({ product }: ProductCardProps) {
           >
             {translate(product, "name")}
           </p>
-          {secondaryDescription && (
+          {/* {secondaryDescription && (
             <p className="block text-md font-normal text-main underline">{secondaryDescription}</p>
+          )} */}
+          {productInStock && (
+            <p className="block text-base font-normal text-main">{productInStock} В наличии</p>
+          )}
+          {!productInStock && (
+            <p className="block text-base font-normal text-main">{productInStock} Нет наличии</p>
           )}
         </a>
       </Link>
     </li>
   );
-}
+};

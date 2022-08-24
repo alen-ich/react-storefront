@@ -3,8 +3,8 @@ const withTM = require("next-transpile-modules")();
 /** @type {import('next').NextConfig} */
 module.exports = withTM({
   i18n: {
-    locales: ["en-US", "pl-PL"],
-    defaultLocale: "en-US",
+    locales: ["en-US", "pl-PL", "fr-FR", "vi-VN", "ru-KZ"],
+    defaultLocale: "ru-KZ",
   },
   reactStrictMode: true,
   // eslint-disable-next-line require-await
@@ -24,4 +24,5 @@ module.exports = withTM({
   eslint: {
     dirs: ["pages", "backend", "frontend", "config"],
   },
+  assetPrefix: process.env.NEXT_PUBLIC_CHECKOUT_APP_URL,
 });
