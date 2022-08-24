@@ -1,4 +1,5 @@
 import { CountryCode } from "@/checkout-storefront/graphql";
+import { getCountryByCountryCode } from "@/checkout-storefront/sections/Addresses/countries";
 import { reduce } from "lodash-es";
 import queryString from "query-string";
 import { ChangeEvent, ReactEventHandler } from "react";
@@ -15,7 +16,10 @@ export const getByUnmatchingId =
     obj.id !== idToCompare;
 
 export type QueryVariables = Partial<
-  Record<"checkoutId" | "passwordResetToken" | "email" | "orderId" | "redirectUrl", string>
+  Record<
+    "checkoutId" | "passwordResetToken" | "email" | "orderId" | "redirectUrl" | "locale",
+    string
+  >
 > & { countryCode: CountryCode };
 
 export const getQueryVariables = (): QueryVariables => {
@@ -30,8 +34,29 @@ export const getQueryVariables = (): QueryVariables => {
 
 export const getCurrentHref = () => location.href;
 
+export const isOrderConfirmationPage = () => {
+  const { orderId } = getQueryVariables();
+  return typeof orderId === "string";
+};
+
+export const getLocalizationDataFromUrl = () => {
+  const { /*channel*/ locale } = getQueryVariables();
+
+  if (typeof locale !== "string") {
+    throw new Error("Invalid url");
+  }
+
+  const [, /*language*/ countryCode] = locale?.split("-");
+
+  return { country: getCountryByCountryCode(countryCode as CountryCode) };
+};
+
 export const extractCheckoutIdFromUrl = (): string => {
   const { checkoutId } = getQueryVariables();
+
+  if (isOrderConfirmationPage()) {
+    return "";
+  }
 
   if (typeof checkoutId !== "string") {
     throw new Error("Checkout token does not exist");
