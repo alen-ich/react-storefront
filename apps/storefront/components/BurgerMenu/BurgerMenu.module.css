@@ -12,7 +12,7 @@
 }
 
 .body {
-  @apply relative z-10 bg-white h-full overflow-y-scroll py-6 flex flex-col;
+  @apply relative z-10 bg-white h-full overflow-y-scroll py-2 flex flex-col;
   width: 93.846153846153846%;
   max-width: 366px;
 }
