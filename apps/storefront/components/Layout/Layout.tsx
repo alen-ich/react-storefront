@@ -5,12 +5,14 @@ export interface LayoutProps {
   children?: React.ReactNode;
 }
 
-export const Layout = ({ children }: LayoutProps) => (
-  <>
-    <Navbar />
-    <div className="align-middle flex flex-col flex-grow">{children}</div>
-    <Footer />
-  </>
-);
+export function Layout({ children }: LayoutProps) {
+  return (
+    <>
+      <Navbar />
+      <div className="align-middle flex flex-col flex-grow">{children}</div>
+      <Footer />
+    </>
+  );
+}
 
 export default Layout;

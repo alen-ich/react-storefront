@@ -13,7 +13,7 @@ export const getFormattedMoney = <TMoney extends Money>(
 
   const { amount, currency } = money;
 
-  return new Intl.NumberFormat("ru-KZ", {
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
     currencyDisplay: "symbol",

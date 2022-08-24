@@ -17,7 +17,7 @@ export interface ProductGalleryProps {
   selectedVariant?: ProductVariantDetailsFragment;
 }
 
-export const ProductGallery = ({ product, selectedVariant }: ProductGalleryProps) => {
+export function ProductGallery({ product, selectedVariant }: ProductGalleryProps) {
   const [expandedImage, setExpandedImage] = useState<ProductMediaFragment | undefined>(undefined);
   const [videoToPlay, setVideoToPlay] = useState<ProductMediaFragment | undefined>(undefined);
 
@@ -27,7 +27,7 @@ export const ProductGallery = ({ product, selectedVariant }: ProductGalleryProps
     <>
       <div
         className={clsx(
-          "mt-1 mb-2 w-full max-h-screen grid grid-cols-1 md:h-full h-4/12 overflow-x-scroll scrollbar-hide",
+          "mt-1 mb-2 w-full max-h-screen grid grid-cols-1 md:h-full h-96 overflow-scroll scrollbar-hide",
           galleryMedia.length > 1 && "md:grid-cols-2 md:col-span-2"
         )}
         style={{
@@ -94,4 +94,4 @@ export const ProductGallery = ({ product, selectedVariant }: ProductGalleryProps
       )}
     </>
   );
-};
+}

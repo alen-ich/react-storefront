@@ -12,7 +12,7 @@ export interface SortingDropdownProps {
   chosen: UrlSorting | null;
 }
 
-export const SortingDropdown = ({ optionToggle, chosen }: SortingDropdownProps) => {
+export function SortingDropdown({ optionToggle, chosen }: SortingDropdownProps) {
   const options = getSortingOptions(chosen);
 
   return (
@@ -63,6 +63,6 @@ export const SortingDropdown = ({ optionToggle, chosen }: SortingDropdownProps) 
       </Transition>
     </Menu>
   );
-};
+}
 
 export default SortingDropdown;

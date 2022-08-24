@@ -12,32 +12,34 @@ export interface FilterPillsProps {
   onClearFilters: () => void;
 }
 
-export const FilterPills = ({ pills, onRemoveAttribute, onClearFilters }: FilterPillsProps) => (
-  <div className="flex pt-4">
-    <div className="flex-grow flex gap-2">
-      {typeof window !== "undefined" &&
-        pills.map(({ label, attributeSlug, choiceSlug }) => (
-          <Chip
-            key={`${attributeSlug}-${choiceSlug}`}
-            label={label}
-            data-testid={`filterPill${choiceSlug}`}
-            onClick={() => {
-              onRemoveAttribute(attributeSlug, choiceSlug);
-            }}
-          />
-        ))}
+export function FilterPills({ pills, onRemoveAttribute, onClearFilters }: FilterPillsProps) {
+  return (
+    <div className="flex pt-4">
+      <div className="flex-grow flex gap-2">
+        {typeof window !== "undefined" &&
+          pills.map(({ label, attributeSlug, choiceSlug }) => (
+            <Chip
+              key={`${attributeSlug}-${choiceSlug}`}
+              label={label}
+              data-testid={`filterPill${choiceSlug}`}
+              onClick={() => {
+                onRemoveAttribute(attributeSlug, choiceSlug);
+              }}
+            />
+          ))}
+      </div>
+      <div>
+        <button
+          onClick={onClearFilters}
+          className="text-main-2 text-base"
+          type="button"
+          data-testid="clearFilters"
+        >
+          Clear all
+        </button>
+      </div>
     </div>
-    <div>
-      <button
-        onClick={onClearFilters}
-        className="text-main-2 text-base"
-        type="button"
-        data-testid="clearFilters"
-      >
-        Clear all
-      </button>
-    </div>
-  </div>
-);
+  );
+}
 
 export default FilterPills;

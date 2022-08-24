@@ -12,7 +12,7 @@ export interface CheckoutProductListProps {
   token: string;
 }
 
-export const CheckoutProductList = ({ lines, token }: CheckoutProductListProps) => {
+export function CheckoutProductList({ lines, token }: CheckoutProductListProps) {
   const t = useIntl();
   const { query, formatPrice } = useRegions();
 
@@ -65,4 +65,4 @@ export const CheckoutProductList = ({ lines, token }: CheckoutProductListProps) 
       })}
     </ul>
   );
-};
+}

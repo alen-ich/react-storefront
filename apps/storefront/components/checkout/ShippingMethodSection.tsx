@@ -20,7 +20,7 @@ export interface ShippingMethodSectionProps {
   active: boolean;
 }
 
-export const ShippingMethodSection = ({ checkout, active }: ShippingMethodSectionProps) => {
+export function ShippingMethodSection({ checkout, active }: ShippingMethodSectionProps) {
   const t = useIntl();
   const { query } = useRegions();
 
@@ -84,6 +84,6 @@ export const ShippingMethodSection = ({ checkout, active }: ShippingMethodSectio
         ))}
     </>
   );
-};
+}
 
 export default ShippingMethodSection;

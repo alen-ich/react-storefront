@@ -13,7 +13,7 @@ export interface RegisterFormData {
   password: string;
 }
 
-const RegisterPage = () => {
+function RegisterPage() {
   const router = useRouter();
   const paths = usePaths();
   const t = useIntl();
@@ -112,6 +112,6 @@ const RegisterPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default RegisterPage;

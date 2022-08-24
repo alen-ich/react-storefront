@@ -10,9 +10,9 @@ interface SavedAddressSelectionListProps {
   updateAddressMutation: (address: AddressFormData) => Promise<CheckoutError[]>;
 }
 
-export const SavedAddressSelectionList = ({
+export function SavedAddressSelectionList({
   updateAddressMutation,
-}: SavedAddressSelectionListProps) => {
+}: SavedAddressSelectionListProps) {
   const { loading, error, data } = useCurrentUserAddressesQuery();
   const [selectedSavedAddress, setSelectedSavedAddress] =
     React.useState<AddressDetailsFragment | null>();
@@ -70,6 +70,6 @@ export const SavedAddressSelectionList = ({
       ))}
     </div>
   );
-};
+}
 
 export default SavedAddressSelectionList;

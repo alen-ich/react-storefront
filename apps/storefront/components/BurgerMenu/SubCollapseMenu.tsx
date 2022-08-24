@@ -11,7 +11,7 @@ import styles from "./BurgerMenu.module.css";
 import ChevronDown from "./chevronDownIcon.svg"; // in the final version it should be imported from ui-kit package
 import { CollapseMenuProps } from "./CollapseMenu";
 
-const SubCollapseMenu = ({ menuItem }: CollapseMenuProps) => {
+function SubCollapseMenu({ menuItem }: CollapseMenuProps) {
   const [open, setOpen] = useState(false);
   const { currentChannel, currentLocale } = useRegions();
 
@@ -54,6 +54,6 @@ const SubCollapseMenu = ({ menuItem }: CollapseMenuProps) => {
       )}
     </div>
   );
-};
+}
 
 export default SubCollapseMenu;

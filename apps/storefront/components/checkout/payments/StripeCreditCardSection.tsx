@@ -20,7 +20,7 @@ interface StripeCardFormInterface {
   checkout: CheckoutDetailsFragment;
 }
 
-const StripeCardForm = ({ checkout }: StripeCardFormInterface) => {
+function StripeCardForm({ checkout }: StripeCardFormInterface) {
   const stripe = useStripe();
   const elements = useElements();
   const { formatPrice } = useRegions();
@@ -167,13 +167,13 @@ const StripeCardForm = ({ checkout }: StripeCardFormInterface) => {
       </CompleteCheckoutButton>
     </form>
   );
-};
+}
 
 interface StripeCreditCardSectionInterface {
   checkout: CheckoutDetailsFragment;
 }
 
-export const StripeCreditCardSection = ({ checkout }: StripeCreditCardSectionInterface) => {
+export function StripeCreditCardSection({ checkout }: StripeCreditCardSectionInterface) {
   const stripeGateway = checkout.availablePaymentGateways.find(
     (gateway) => gateway.id === STRIPE_GATEWAY
   );
@@ -196,6 +196,6 @@ export const StripeCreditCardSection = ({ checkout }: StripeCreditCardSectionInt
       </Elements>
     </div>
   );
-};
+}
 
 export default StripeCreditCardSection;

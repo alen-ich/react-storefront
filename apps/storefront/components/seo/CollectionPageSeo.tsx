@@ -8,7 +8,7 @@ interface CollectionPageSeoProps {
   collection: CollectionDetailsFragment;
 }
 
-export const CollectionPageSeo = ({ collection }: CollectionPageSeoProps) => {
+export function CollectionPageSeo({ collection }: CollectionPageSeoProps) {
   const title = collection?.seoTitle
     ? `${collection?.seoTitle} - ${STOREFRONT_NAME}`
     : STOREFRONT_NAME;
@@ -40,6 +40,6 @@ export const CollectionPageSeo = ({ collection }: CollectionPageSeoProps) => {
       }}
     />
   );
-};
+}
 
 export default CollectionPageSeo;

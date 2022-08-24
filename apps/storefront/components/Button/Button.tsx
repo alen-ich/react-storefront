@@ -6,7 +6,7 @@ const styles =
 
 export type ButtonProps = Pick<HTMLAttributes<{}>, "className" | "onClick" | "children">;
 
-export const Button = ({ className, ...rest }: ButtonProps) => (
+export function Button({ className, ...rest }: ButtonProps) {
   /* eslint react/button-has-type: off */
-  <button className={clsx(styles, className)} {...rest} />
-);
+  return <button className={clsx(styles, className)} {...rest} />;
+}

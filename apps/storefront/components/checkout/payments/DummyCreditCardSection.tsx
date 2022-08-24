@@ -28,7 +28,7 @@ interface DummyCreditCardSectionInterface {
   checkout: CheckoutDetailsFragment;
 }
 
-export const DummyCreditCardSection = ({ checkout }: DummyCreditCardSectionInterface) => {
+export function DummyCreditCardSection({ checkout }: DummyCreditCardSectionInterface) {
   const t = useIntl();
   const { resetCheckoutToken } = useCheckout();
   const paths = usePaths();
@@ -166,6 +166,6 @@ export const DummyCreditCardSection = ({ checkout }: DummyCreditCardSectionInter
       </form>
     </div>
   );
-};
+}
 
 export default DummyCreditCardSection;

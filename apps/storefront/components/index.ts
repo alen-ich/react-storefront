@@ -15,7 +15,6 @@ export { Navbar } from "./Navbar";
 export { OrdersTable } from "./OrdersTable";
 export { PageHero } from "./PageHero";
 export { Pagination } from "./Pagination";
-export { Slider } from "./product/SlideShow";
 export { VariantSelector } from "./product/VariantSelector";
 export { ProductCollection } from "./ProductCollection";
 export { RichText } from "./RichText";

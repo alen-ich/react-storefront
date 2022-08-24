@@ -12,7 +12,7 @@ export interface CollapseMenuProps {
   menuItem: MenuItemWithChildrenFragment;
 }
 
-export const CollapseMenu = ({ menuItem }: CollapseMenuProps) => {
+export function CollapseMenu({ menuItem }: CollapseMenuProps) {
   const [open, setOpen] = useState(false);
 
   const shouldDisplayAnchor = !menuItem.children?.length;
@@ -43,6 +43,6 @@ export const CollapseMenu = ({ menuItem }: CollapseMenuProps) => {
       )}
     </div>
   );
-};
+}
 
 export default CollapseMenu;

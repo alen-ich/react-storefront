@@ -7,17 +7,17 @@ export interface RichTextProps {
   jsonStringData?: string;
 }
 
-export const RichText = ({ jsonStringData }: RichTextProps) => {
+export function RichText({ jsonStringData }: RichTextProps) {
   const data = parseEditorJSData(jsonStringData);
   if (!data) {
     return null;
   }
 
   return (
-    <article className="text-base mt-2">
+    <article className="prose-2xl">
       <Blocks data={data} />
     </article>
   );
-};
+}
 
 export default RichText;
