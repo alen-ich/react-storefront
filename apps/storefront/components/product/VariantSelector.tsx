@@ -56,8 +56,8 @@ export const VariantSelector = ({ product, selectedVariantID }: VariantSelectorP
                 <div
                   className={clsx(
                     "bg-white w-full h-full relative object-contain border-2",
-                    checked && "border-brand",
-                    !checked && "hover:border-main border-main-2"
+                    checked && " border-main-2",
+                    !checked && "hover:border-main border-[#f1f2f3]"
                   )}
                 >
                   <RadioGroup.Label as="div" className="w-full justify-between p-4">
