@@ -67,7 +67,7 @@
   "app.ui.activateButton": "Активировать",
   "app.ui.browseProducts": "Искать товары",
   "app.ui.changeButton": "Изменить",
-  "app.ui.loadMoreButton": "Загрузить Больше",
+  "app.ui.loadMoreButton": "Загрузить больше",
   "app.ui.noProductsInfo": "Поисковый запрос не дал никаких результатов",
   "app.ui.productCounter": "{currentItemsCount} из {totalItemsCount}",
   "app.ui.removeButton": "Удалить",
