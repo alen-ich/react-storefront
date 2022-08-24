@@ -59,10 +59,10 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   };
 };
 
-const CategoryPage = ({
+function CategoryPage({
   category,
   attributeFiltersData,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const paths = usePaths();
   const router = useRouter();
 
@@ -79,7 +79,7 @@ const CategoryPage = ({
   return (
     <>
       <CategoryPageSeo category={category} />
-      <header className="pt-4">
+      <header className="mb-4 pt-4">
         <div className="container px-8">
           <PageHero
             title={translate(category, "name")}
@@ -92,7 +92,7 @@ const CategoryPage = ({
         </div>
       </header>
       <main>
-        <div className="container px-8">
+        <div className="container px-8 mt-4">
           <FilteredProductList
             attributeFiltersData={attributeFiltersData}
             categoryIDs={[category.id]}
@@ -101,7 +101,7 @@ const CategoryPage = ({
       </main>
     </>
   );
-};
+}
 
 export default CategoryPage;
 

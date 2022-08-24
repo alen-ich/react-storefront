@@ -12,7 +12,7 @@ export interface EmailSectionProps {
   checkout: CheckoutDetailsFragment;
 }
 
-export const EmailSection = ({ checkout }: EmailSectionProps) => {
+export function EmailSection({ checkout }: EmailSectionProps) {
   const t = useIntl();
   const { query } = useRegions();
   const [modifyEmail, setModifyEmail] = useState(!checkout?.email);
@@ -83,6 +83,6 @@ export const EmailSection = ({ checkout }: EmailSectionProps) => {
       )}
     </>
   );
-};
+}
 
 export default EmailSection;

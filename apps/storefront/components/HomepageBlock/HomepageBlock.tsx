@@ -15,7 +15,7 @@ export interface HomepageBlockProps {
   menuItem: HomepageBlockFragment;
 }
 
-export const HomepageBlock = ({ menuItem }: HomepageBlockProps) => {
+export function HomepageBlock({ menuItem }: HomepageBlockProps) {
   const paths = usePaths();
   const t = useIntl();
   const filter: ProductFilterInput = {};
@@ -33,14 +33,14 @@ export const HomepageBlock = ({ menuItem }: HomepageBlockProps) => {
     link = paths.collection._slug(menuItem.collection.slug).$url();
   }
   return (
-    <div className="pb-8 w-full" data-testid="category">
-      {/* <h1
+    <div className="pb-8" data-testid="category">
+      <h1
         className="text-3xl font-extrabold tracking-tight text-gray-900 pb-4"
         data-testid={`categoryName${menuItem.name}`}
       >
         {translate(menuItem, "name")}
-      </h1> */}
-      <ProductCollection filter={filter} allowMore={false} perPage={4} />
+      </h1>
+      <ProductCollection filter={filter} allowMore={false} />
       <div className="flex flex-row-reverse p-4">
         <Link href={link} passHref>
           <a href="pass">
@@ -50,6 +50,6 @@ export const HomepageBlock = ({ menuItem }: HomepageBlockProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default HomepageBlock;

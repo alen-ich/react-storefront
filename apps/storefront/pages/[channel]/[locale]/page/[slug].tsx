@@ -38,7 +38,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     },
   };
 };
-const PagePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
+function PagePage({ page }: InferGetStaticPropsType<typeof getStaticProps>) {
   if (!page?.id) {
     return <Custom404 />;
   }
@@ -48,7 +48,7 @@ const PagePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <main className="container pt-8 px-8">{content && <RichText jsonStringData={content} />}</main>
   );
-};
+}
 
 export default PagePage;
 

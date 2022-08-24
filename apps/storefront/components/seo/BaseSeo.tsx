@@ -9,7 +9,7 @@ interface BaseSeoProps {
   description?: string;
 }
 
-export const BaseSeo = ({ title, description }: BaseSeoProps) => {
+export function BaseSeo({ title, description }: BaseSeoProps) {
   const seoTitle = title ? `${title} - ${STOREFRONT_NAME}` : STOREFRONT_NAME;
   const seoDescription = description || "";
 
@@ -37,4 +37,4 @@ export const BaseSeo = ({ title, description }: BaseSeoProps) => {
       }}
     />
   );
-};
+}

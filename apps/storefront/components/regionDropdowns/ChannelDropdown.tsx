@@ -15,7 +15,7 @@ export interface ChannelDropdownProps {
   horizontalAlignment?: HorizontalAlignment;
 }
 
-export const ChannelDropdown = ({ horizontalAlignment }: ChannelDropdownProps) => {
+export function ChannelDropdown({ horizontalAlignment }: ChannelDropdownProps) {
   const router = useRouter();
   const { channels, currentChannel, setCurrentChannel, currentLocale } = useRegions();
 
@@ -57,6 +57,6 @@ export const ChannelDropdown = ({ horizontalAlignment }: ChannelDropdownProps) =
       ))}
     </BaseRegionsDropdown>
   );
-};
+}
 
 export default ChannelDropdown;

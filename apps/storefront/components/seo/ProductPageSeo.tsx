@@ -7,7 +7,7 @@ interface ProductPageSeoProps {
   product: ProductDetailsFragment;
 }
 
-export const ProductPageSeo = ({ product }: ProductPageSeoProps) => {
+export function ProductPageSeo({ product }: ProductPageSeoProps) {
   const productName = product.seoTitle || product.name;
   const title = productName ? `${productName} - ${STOREFRONT_NAME}` : STOREFRONT_NAME;
 
@@ -32,6 +32,6 @@ export const ProductPageSeo = ({ product }: ProductPageSeoProps) => {
       }}
     />
   );
-};
+}
 
 export default ProductPageSeo;

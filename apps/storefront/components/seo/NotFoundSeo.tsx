@@ -2,7 +2,7 @@ import { NextSeo } from "next-seo";
 
 import { STOREFRONT_NAME } from "@/lib/const";
 
-export const NotFoundSeo = () => {
+export function NotFoundSeo() {
   const title = `Page Not found - ${STOREFRONT_NAME}`;
   const description = "Page not found.";
 
@@ -23,6 +23,6 @@ export const NotFoundSeo = () => {
       }}
     />
   );
-};
+}
 
 export default NotFoundSeo;

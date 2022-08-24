@@ -5,7 +5,7 @@ import { saleorClient } from "@/lib/graphql";
 
 import { useRegions } from "../RegionsProvider";
 
-export const SaleorProviderWithChannels = ({ children }: PropsWithChildren<{}>) => {
+export function SaleorProviderWithChannels({ children }: PropsWithChildren<{}>) {
   const { currentChannel } = useRegions();
 
   const {
@@ -18,6 +18,6 @@ export const SaleorProviderWithChannels = ({ children }: PropsWithChildren<{}>) 
 
   // @ts-expect-error React 17 <-> 18 types mismatch
   return <SaleorProvider client={saleorClient}>{children}</SaleorProvider>;
-};
+}
 
 export default SaleorProviderWithChannels;

@@ -28,13 +28,13 @@ export interface ProductCollectionProps {
   setCounter?: (value: number) => void;
 }
 
-export const ProductCollection = ({
+export function ProductCollection({
   filter,
   sortBy,
   setCounter,
   allowMore = true,
   perPage = 4,
-}: ProductCollectionProps) => {
+}: ProductCollectionProps) {
   const t = useIntl();
   const { query } = useRegions();
 
@@ -82,7 +82,10 @@ export const ProductCollection = ({
   }
   return (
     <div>
-      <ul className="grid grid-cols-2  gap-5" data-testid="productsList">
+      <ul
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12"
+        data-testid="productsList"
+      >
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -97,6 +100,6 @@ export const ProductCollection = ({
       )}
     </div>
   );
-};
+}
 
 export default ProductCollection;

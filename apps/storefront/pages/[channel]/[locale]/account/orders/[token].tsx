@@ -21,7 +21,7 @@ export async function getStaticPaths() {
   };
 }
 
-const OrderDetailsPage = ({ token }: InferGetStaticPropsType<typeof getStaticProps>) => {
+function OrderDetailsPage({ token }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { formatPrice } = useRegions();
   const { authenticated } = useAuthState();
   const { loading, error, data } = useOrderDetailsByTokenQuery({
@@ -127,7 +127,7 @@ const OrderDetailsPage = ({ token }: InferGetStaticPropsType<typeof getStaticPro
       </div>
     </>
   );
-};
+}
 
 export default OrderDetailsPage;
 

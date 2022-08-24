@@ -14,7 +14,7 @@ export interface VariantSelectorProps {
   selectedVariantID?: string;
 }
 
-export const VariantSelector = ({ product, selectedVariantID }: VariantSelectorProps) => {
+export function VariantSelector({ product, selectedVariantID }: VariantSelectorProps) {
   const paths = usePaths();
   const router = useRouter();
   const { formatPrice } = useRegions();
@@ -55,8 +55,8 @@ export const VariantSelector = ({ product, selectedVariantID }: VariantSelectorP
               {({ checked }) => (
                 <div
                   className={clsx(
-                    "bg-white w-full h-full relative object-contain border-2",
-                    checked && "border-brand",
+                    "bg-white w-full h-full relative hover:translate-y-[-10px] hover:translate-x-[-10px]  transition-transform object-contain border-2",
+                    checked && "border-brand translate-y-[-10px] translate-x-[-10px]",
                     !checked && "hover:border-main border-main-2"
                   )}
                 >
@@ -76,6 +76,6 @@ export const VariantSelector = ({ product, selectedVariantID }: VariantSelectorP
       </RadioGroup>
     </div>
   );
-};
+}
 
 export default VariantSelector;

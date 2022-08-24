@@ -18,7 +18,7 @@ export interface LoginFormData {
   password: string;
 }
 
-const LoginPage = () => {
+function LoginPage() {
   const router = useRouter();
   const paths = usePaths();
   const t = useIntl();

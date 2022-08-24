@@ -44,7 +44,7 @@ const sectionsManager = (checkout?: CheckoutDetailsFragment): CollapsedSections 
   return state;
 };
 
-export const CheckoutForm = () => {
+export function CheckoutForm() {
   const { checkout } = useCheckout();
 
   if (!checkout) {
@@ -77,6 +77,6 @@ export const CheckoutForm = () => {
       </div>
     </section>
   );
-};
+}
 
 export default CheckoutForm;

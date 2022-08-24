@@ -15,7 +15,7 @@ export interface CartSummaryProps {
   checkout: CheckoutDetailsFragment;
 }
 
-export const CartSummary = ({ checkout }: CartSummaryProps) => {
+export function CartSummary({ checkout }: CartSummaryProps) {
   const t = useIntl();
   const [editPromoCode] = useState(false);
   const [checkoutAddPromoCodeMutation] = useCheckoutAddPromoCodeMutation();
@@ -99,4 +99,4 @@ export const CartSummary = ({ checkout }: CartSummaryProps) => {
       </div>
     </section>
   );
-};
+}

@@ -10,7 +10,7 @@ interface CheckoutSidebarProps {
   checkout: CheckoutDetailsFragment;
 }
 
-export const CheckoutSidebar = ({ checkout }: CheckoutSidebarProps) => {
+export function CheckoutSidebar({ checkout }: CheckoutSidebarProps) {
   const t = useIntl();
   const lines = checkout.lines?.filter(notNullable) || [];
   return (
@@ -23,6 +23,6 @@ export const CheckoutSidebar = ({ checkout }: CheckoutSidebarProps) => {
       <CartSummary checkout={checkout} />
     </section>
   );
-};
+}
 
 export default CheckoutSidebar;

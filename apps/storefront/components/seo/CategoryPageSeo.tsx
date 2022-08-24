@@ -8,7 +8,7 @@ interface CategoryPageSeoProps {
   category: CategoryDetailsFragment;
 }
 
-export const CategoryPageSeo = ({ category }: CategoryPageSeoProps) => {
+export function CategoryPageSeo({ category }: CategoryPageSeoProps) {
   const title = category?.seoTitle ? `${category?.seoTitle} - ${STOREFRONT_NAME}` : STOREFRONT_NAME;
   const seoDescription = category.seoDescription || "";
 
@@ -39,6 +39,6 @@ export const CategoryPageSeo = ({ category }: CategoryPageSeoProps) => {
       }}
     />
   );
-};
+}
 
 export default CategoryPageSeo;
