@@ -39,6 +39,18 @@ export const getStaticPaths: GetStaticPaths = async () => ({
   fallback: "blocking",
 });
 
+const buttonText = (selectedVariant: undefined | object, loadingAddToCheckout: boolean, t: any) => {
+  if (!selectedVariant) {
+    return t.formatMessage(messages.variantNotChosen);
+  } 
+    if (loadingAddToCheckout) {
+      return t.formatMessage(messages.adding);
+    } 
+      return t.formatMessage(messages.addToCart);
+    
+  
+};
+
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const productSlug = context.params?.slug?.toString()!;
   const response: ApolloQueryResult<ProductBySlugQuery> = await apolloClient.query<
@@ -194,13 +206,7 @@ const ProductPage = ({ product }: InferGetStaticPropsType<typeof getStaticProps>
             )}
             data-testid="addToCartButton"
           >
-            {/* eslint-disable */}
-            {!selectedVariant
-              ? t.formatMessage(messages.variantNotChosen)
-              : loadingAddToCheckout
-              ? t.formatMessage(messages.adding)
-              : t.formatMessage(messages.addToCart)}
-            {/* eslint-enable */}
+            {buttonText(selectedVariant, loadingAddToCheckout, t)}
           </button>
           {/* 
           {selectedVariant?.quantityAvailable === 0 && (
