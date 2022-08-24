@@ -25,7 +25,7 @@ export const PageHero = ({ title, description, pills = [] }: PageHeroProps) => (
       </div>
     )}
     {pills.length > 0 && (
-      <div className="flex gap-2 flex-wrap">
+      <div className="flex gap-2 flex-wrap mt-2">
         {pills.map((pill) => (
           <ChipButton key={pill.label} label={pill.label} onClick={pill.onClick} />
         ))}
