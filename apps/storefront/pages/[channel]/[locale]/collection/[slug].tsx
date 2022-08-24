@@ -56,10 +56,10 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     },
   };
 };
-function CollectionPage({
+const CollectionPage = ({
   collection,
   attributeFiltersData,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!collection) {
     return <Custom404 />;
   }
@@ -67,7 +67,7 @@ function CollectionPage({
   return (
     <>
       <CollectionPageSeo collection={collection} />
-      <header className="mb-4 pt-4">
+      <header className="pt-4">
         <div className="container px-8">
           <PageHero
             title={translate(collection, "name")}
@@ -75,7 +75,7 @@ function CollectionPage({
           />
         </div>
       </header>
-      <div className="container px-8 mt-4">
+      <div className="container px-8">
         <FilteredProductList
           attributeFiltersData={attributeFiltersData}
           collectionIDs={[collection.id]}
@@ -83,7 +83,7 @@ function CollectionPage({
       </div>
     </>
   );
-}
+};
 
 export default CollectionPage;
 
