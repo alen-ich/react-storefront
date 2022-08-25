@@ -56,7 +56,7 @@ export const BurgerMenu = ({ open, onCloseClick }: BurgerMenuProps) => {
       <div className={styles.backdrop} aria-hidden="true" onClick={onCloseClick} />
       <div className={styles.body}>
         <div className="flex justify-end items-center w-full mb-3 border-b-2 px-2 text-center">
-          <h1 className="text-5xl tracking-tight text-gray-800 mr-36">МЕНЮ</h1>
+          <h1 className="text-4xl tracking-tight text-gray-800 mx-auto">Меню</h1>
           <NavIconButton icon="close" onClick={onCloseClick} />
         </div>
         {menu.map((item) => (
