@@ -10,7 +10,10 @@ import { ProductDetailsFragment, ProductMediaFragment } from "@/saleor/api";
 
 const properties = {
   prevArrow: (
-    <button type="button" className="w-20 flex justify-center h-full items-center">
+    <button
+      type="button"
+      className="w-20 flex justify-center h-full items-center focus-visible:outline-none"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -26,7 +29,10 @@ const properties = {
     </button>
   ),
   nextArrow: (
-    <button type="button" className="w-20 flex justify-center h-full items-center">
+    <button
+      type="button"
+      className="w-20 flex justify-center h-full items-center focus-visible:outline-none"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
