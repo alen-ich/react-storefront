@@ -22,7 +22,7 @@ export const SortingDropdown = ({ optionToggle, chosen }: SortingDropdownProps) 
           className="inline-flex w-full justify-left px-2 py-2 text-base font-medium  hover:bg-opacity-30 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
           data-testid="sortBy"
         >
-          Sort by
+          Сортировать
           <ChevronDownIcon className="ml-2 -mr-1 h-5 w-5 " aria-hidden="true" />
         </Menu.Button>
       </div>

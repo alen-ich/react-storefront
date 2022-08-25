@@ -30,6 +30,11 @@ export const Navbar = () => {
         setBurgerOpen(false);
       }
     });
+    if (isBurgerOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
   });
 
   const counter =
@@ -81,7 +86,10 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      <BurgerMenu open={isBurgerOpen} onCloseClick={() => setBurgerOpen(false)} />
+      <div>
+        {" "}
+        <BurgerMenu open={isBurgerOpen} onCloseClick={() => setBurgerOpen(false)} />
+      </div>
     </>
   );
 };

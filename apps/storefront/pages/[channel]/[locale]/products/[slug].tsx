@@ -39,6 +39,18 @@ export const getStaticPaths: GetStaticPaths = async () => ({
   fallback: "blocking",
 });
 
+const buttonText = (selectedVariant: undefined | object, loadingAddToCheckout: boolean, t: any) => {
+  if (!selectedVariant) {
+    return t.formatMessage(messages.variantNotChosen);
+  } 
+    if (loadingAddToCheckout) {
+      return t.formatMessage(messages.adding);
+    } 
+      return t.formatMessage(messages.addToCart);
+    
+  
+};
+
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const productSlug = context.params?.slug?.toString()!;
   const response: ApolloQueryResult<ProductBySlugQuery> = await apolloClient.query<
@@ -189,27 +201,19 @@ const ProductPage = ({ product }: InferGetStaticPropsType<typeof getStaticProps>
             type="submit"
             disabled={isAddToCartButtonDisabled}
             className={clsx(
-              "w-full py-3 px-8 flex items-center justify-center text-base bg-action-1 text-white disabled:bg-disabled hover:bg-white  border-2 border-transparent  focus:outline-none",
-              !isAddToCartButtonDisabled && "hover:border-action-1 hover:text-action-1"
+              "w-full py-3 px-8 flex items-center justify-center text-base bg-[#f1f2f3] text-black disabled:bg-[#f9fafa] hover:bg-white  border-2 border-transparent  focus:outline-none",
+              !isAddToCartButtonDisabled && "hover:border-[#f1f2f3] hover:text-[#f1f2f3]"
             )}
             data-testid="addToCartButton"
           >
-            {loadingAddToCheckout
-              ? t.formatMessage(messages.adding)
-              : t.formatMessage(messages.addToCart)}
+            {buttonText(selectedVariant, loadingAddToCheckout, t)}
           </button>
-
-          {!selectedVariant && (
-            <p className="text-base text-yellow-600">
-              {t.formatMessage(messages.variantNotChosen)}
-            </p>
-          )}
-
+          {/* 
           {selectedVariant?.quantityAvailable === 0 && (
             <p className="text-base text-yellow-600" data-testid="soldOut">
               {t.formatMessage(messages.soldOut)}
             </p>
-          )}
+          )} */}
 
           {!!addToCartError && <p>{addToCartError}</p>}
 
