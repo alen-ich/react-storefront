@@ -124,7 +124,10 @@ export const BurgerMenu = ({ open, onCloseClick }: BurgerMenuProps) => {
                 <h4>INSTAGRAM</h4>
               </a>
             </Link>
-            <Link href="wa.me/message/2SLDGJ3V762PN1" passHref>
+            <Link
+              href="https://api.whatsapp.com/message/2SLDGJ3V762PN1?autoload=1&app_absent=0"
+              passHref
+            >
               <a href="pass" className="hidden xs:flex items-center text-base" target="_blank">
                 <IconButton
                   variant="bare"
