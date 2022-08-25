@@ -97,11 +97,11 @@ export const BurgerMenu = ({ open, onCloseClick }: BurgerMenuProps) => {
           <LocaleDropdown />
         </div> */}
         <div className="mt-auto">
-          <div className="ml-8 flex flex-col gap-1">
+          <div className="ml-8 flex gap-4">
             <Link href="https://www.instagram.com/bibotta.studio/" passHref>
               <a
                 href="pass"
-                className="hidden xs:flex items-center gap-2 text-base"
+                className="hidden xs:flex items-center gap-1 text-base"
                 target="_blank"
               >
                 <IconButton
@@ -125,11 +125,7 @@ export const BurgerMenu = ({ open, onCloseClick }: BurgerMenuProps) => {
               </a>
             </Link>
             <Link href="wa.me/message/2SLDGJ3V762PN1" passHref>
-              <a
-                href="pass"
-                className="hidden xs:flex items-center gap-2 text-base"
-                target="_blank"
-              >
+              <a href="pass" className="hidden xs:flex items-center text-base" target="_blank">
                 <IconButton
                   variant="bare"
                   icon={
@@ -154,7 +150,7 @@ export const BurgerMenu = ({ open, onCloseClick }: BurgerMenuProps) => {
               </a>
             </Link>
           </div>
-          <div className="mt-2 ml-8 font-sm">
+          <div className="mt-10 ml-8 font-sm">
             © BIBOTTA STUDIO, 2022 г. <br />
             Все права защищены.
           </div>
