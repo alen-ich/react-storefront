@@ -37,6 +37,10 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+body {
+  touch-action: manipulation;
+}
+
 .each-slide-effect > div {
   display: flex;
   align-items: center;
