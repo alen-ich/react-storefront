@@ -25,6 +25,7 @@ export interface ProductCollectionProps {
   };
   allowMore?: boolean;
   perPage?: number;
+  mainView?: boolean;
   setCounter?: (value: number) => void;
 }
 
@@ -34,6 +35,7 @@ export const ProductCollection = ({
   setCounter,
   allowMore = true,
   perPage = 4,
+  mainView = false,
 }: ProductCollectionProps) => {
   const t = useIntl();
   const { query } = useRegions();
@@ -82,9 +84,12 @@ export const ProductCollection = ({
   }
   return (
     <div>
-      <ul className="grid grid-cols-2  gap-5" data-testid="productsList">
+      <ul
+        className={`grid gap-5 ${mainView ? "grid-cols-2" : "grid-cols-4"}`}
+        data-testid="productsList"
+      >
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} productCardView={mainView} />
         ))}
       </ul>
       {allowMore && (

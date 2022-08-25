@@ -9,6 +9,7 @@ import { ProductCardFragment } from "@/saleor/api";
 
 export interface ProductCardProps {
   product: ProductCardFragment;
+  productCardView: boolean;
 }
 
 // const getCardSecondaryDescription = (product: ProductCardFragment) => {
@@ -25,14 +26,14 @@ export interface ProductCardProps {
 //   return "";
 // };
 
-export const ProductCard = ({ product }: ProductCardProps) => {
+export const ProductCard = ({ product, productCardView }: ProductCardProps) => {
   const paths = usePaths();
   const productInStock = product.isAvailable;
   // const secondaryDescription = getCardSecondaryDescription(product);
   const thumbnailUrl = product.media?.find((media) => media.type === "IMAGE")?.url;
 
   return (
-    <li key={product.id} className="w-full first:col-span-2">
+    <li key={product.id} className={`w-full ${productCardView ? "first:col-span-2" : ""}`}>
       <Link href={paths.products._slug(product.slug).$url()} prefetch={false} passHref>
         <a href="pass" className="flex flex-col w-full">
           <div className="bg-main active:bg-brand w-full">

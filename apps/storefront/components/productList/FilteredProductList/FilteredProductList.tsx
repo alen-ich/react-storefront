@@ -192,6 +192,7 @@ export const FilteredProductList = ({
           sortBy={sortBy || undefined}
           setCounter={setItemsCounter}
           perPage={40}
+          mainView={false}
         />
       </div>
     </>
