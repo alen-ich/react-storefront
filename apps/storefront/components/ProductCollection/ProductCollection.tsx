@@ -85,7 +85,7 @@ export const ProductCollection = ({
   return (
     <div>
       <ul
-        className={`grid gap-5 ${mainView ? "grid-cols-2" : "grid-cols-4"}`}
+        className={`grid gap-2 ${mainView ? "grid-cols-2" : "grid-cols-4"}`}
         data-testid="productsList"
       >
         {products.map((product) => (
