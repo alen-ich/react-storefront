@@ -24,11 +24,6 @@ export interface BurgerMenuProps {
 }
 
 export const BurgerMenu = ({ open, onCloseClick }: BurgerMenuProps) => {
-  // useEffect(() => {
-  //   // 👇 add class to body element
-  //   document.body.classList.add("bg-red-500");
-  // }, []);
-  // const paths = usePaths();
   const { query } = useRegions();
   // const t = useIntl();
 
