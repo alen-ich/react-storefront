@@ -74,7 +74,7 @@ export const Navbar = () => {
               </a>
             </Link>
             <Link href={paths.search.$url()} passHref>
-              <a href="pass" className="hidden lg:flex ml-2">
+              <a href="pass" className="hidden xs:flex ml-2">
                 <NavIconButton icon="spyglass" data-testid="searchIcon" />
               </a>
             </Link>
