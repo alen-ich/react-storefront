@@ -2,7 +2,7 @@ import { ApolloQueryResult } from "@apollo/client";
 import { useAuthState } from "@saleor/sdk";
 import clsx from "clsx";
 import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import Link from "next/link";
+// import Link from "next/link";
 import { useRouter } from "next/router";
 import Custom404 from "pages/404";
 import React, { ReactElement, useState } from "react";
@@ -183,13 +183,13 @@ const ProductPage = ({ product }: InferGetStaticPropsType<typeof getStaticProps>
                 {formatPrice(price)}
               </h2>
             )}
-            {!!product.category?.slug && (
+            {/* {!!product.category?.slug && (
               <Link href={paths.category._slug(product?.category?.slug).$url()} passHref>
                 <p className="text-lg mt-2 font-medium text-gray-600 cursor-pointer">
                   {translate(product.category, "name")}
                 </p>
               </Link>
-            )}
+            )} */}
           </div>
 
           <VariantSelector product={product} selectedVariantID={selectedVariantID} />
