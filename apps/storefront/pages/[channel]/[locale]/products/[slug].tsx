@@ -42,13 +42,11 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 const buttonText = (selectedVariant: undefined | object, loadingAddToCheckout: boolean, t: any) => {
   if (!selectedVariant) {
     return t.formatMessage(messages.variantNotChosen);
-  } 
-    if (loadingAddToCheckout) {
-      return t.formatMessage(messages.adding);
-    } 
-      return t.formatMessage(messages.addToCart);
-    
-  
+  }
+  if (loadingAddToCheckout) {
+    return t.formatMessage(messages.adding);
+  }
+  return t.formatMessage(messages.addToCart);
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
