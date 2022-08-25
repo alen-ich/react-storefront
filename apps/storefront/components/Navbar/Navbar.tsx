@@ -73,11 +73,11 @@ export const Navbar = () => {
                 <NavIconButton icon="bag" aria-hidden="true" counter={counter} />
               </a>
             </Link>
-            <Link href={paths.search.$url()} passHref>
+            {/* <Link href={paths.search.$url()} passHref>
               <a href="pass" className="hidden xs:flex ml-2">
                 <NavIconButton icon="spyglass" data-testid="searchIcon" />
               </a>
-            </Link>
+            </Link> */}
             <NavIconButton
               icon="menu"
               className="ml-2 lg:hidden"
